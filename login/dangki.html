@@ -35,7 +35,7 @@
                             Họ và tên:
                         </div>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Nhập họ và tên" class="form-control">
+                            <input type="text" placeholder="Nhập họ và tên" class="form-control" id="tenTXT">
                         </div>
                     </div>
                     <div class="row">
@@ -43,7 +43,7 @@
                            Email:
                         </div>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Nhập Email" class="form-control">
+                            <input type="text" placeholder="Nhập Email" class="form-control" id="emailTXT">
                         </div>
                     </div>
                     <div class="row">
@@ -51,7 +51,7 @@
                             Số điện thoại:
                         </div>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Nhập số điện thoại" class="form-control">
+                            <input type="text" placeholder="Nhập số điện thoại" class="form-control" id="sdtTXT">
                         </div>
                     </div>
                     <div class="row">
@@ -59,7 +59,7 @@
                             Nhập mật Khẩu:
                         </div>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Nhập mật khẩu" class="form-control">
+                            <input type="text" placeholder="Nhập mật khẩu" class="form-control" id="passTXT">
                         </div>
                     </div>
                     <div class="row">
@@ -67,11 +67,11 @@
                             Nhập lại mật khẩu:
                         </div>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Nhập lại mật khẩu" class="form-control">
+                            <input type="text" placeholder="Nhập lại mật khẩu" class="form-control" id="repassTXT">
                         </div>
                     </div>
                     <div class="row-12 text-center">
-                        <input type="submit" value="Đăng ký">
+                        <input type="submit" value="Đăng ký" id="btnSubmit">
                     </div>
                     <div class="row-12 text-center">
                         <p>Hoặc</p>
@@ -81,10 +81,61 @@
                     </div>
                     <div class="row-12 text-center">
                         Bạn đã có tài khoản?
-                        <a href="#" style="text-decoration: none; color:blue;"><u>Đăng nhập</u></a>
+                        <a href="../login/dangnhap.html" style="text-decoration: none; color:blue;"><u>Đăng nhập</u></a>
                     </div>
             </div>
         </div>
     </body>
+    <script>
+        $(document).ready(function(){
+          $("#btnSubmit").click(function(event){
+            var ten = $("#tenTXT").val();
+            var email = $("#emailTXT").val();
+            var sdt = $("#sdtTXT").val();
+            var pass = $("#passTXT").val();
+            var repass = $("#repassTXT").val();
+            var isValid = true;
+      
+            if (ten == "") {
+				$("#tenTXT").css("border", "2px solid red");
+				isValid = false;
+			} else {
+				$("#tenTXT").css("border", "");
+			}
+
+            if (email.trim() == "" || !email.trim().endsWith("@gmail.com")) {
+              $("#emailTXT").css("border", "2px solid red");
+              isValid = false;
+            } else {
+              $("#emailTXT").css("border", "");
+            }
+      
+            if (sdt.trim() == "") {
+              $("#sdtTXT").css("border", "2px solid red");
+              isValid = false;
+            } else {
+              $("#sdtTXT").css("border", "");
+            }
+      
+            if (pass.trim() == "" || !/\d/.test(pass.trim()) || !/[A-Z]/.test(pass.trim()) || pass.trim().length < 8) {
+              $("#passTXT").css("border", "2px solid red");
+              isValid = false;
+            } else {
+              $("#passTXT").css("border", "");
+            }
+      
+            if (repass.trim() == "" || repass.trim() != pass.trim()) {
+              $("#repassTXT").css("border", "2px solid red");
+              isValid = false;
+            } else {
+              $("#repassTXT").css("border", "");
+            }
+      
+            if (isValid == false) {
+              event.preventDefault();
+            }
+          });
+        });
+      </script>
 </html>
 
