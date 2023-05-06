@@ -51,7 +51,7 @@
                             Số điện thoại:
                         </div>
                         <div class="col-sm-7">
-                            <input type="text" placeholder="Nhập số điện thoại" class="form-control" id="sdtTXT">
+                            <input type="number" placeholder="Nhập số điện thoại" class="form-control" id="sdtTXT">
                         </div>
                     </div>
                     <div class="row">
@@ -110,12 +110,12 @@
               $("#emailTXT").css("border", "");
             }
       
-            if (sdt.trim() == "") {
-              $("#sdtTXT").css("border", "2px solid red");
-              isValid = false;
-            } else {
-              $("#sdtTXT").css("border", "");
-            }
+            if (sdt.trim() == "" || !/^[0-9]+$/.test(sdt.trim())) {
+                        $("#sdtTXT").css("border", "2px solid red");
+                        isValid = false;
+                    } else {
+                        $("#sdtTXT").css("border", "");
+                    }
       
             if (pass.trim() == "" || !/\d/.test(pass.trim()) || !/[A-Z]/.test(pass.trim()) || pass.trim().length < 8) {
               $("#passTXT").css("border", "2px solid red");
