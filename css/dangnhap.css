@@ -10,7 +10,7 @@ main{
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    background-color:lightgreen;
+ 
 }
 #head{
     text-align: center;
@@ -107,7 +107,7 @@ h1{
     main{
         width: 1000px;
         min-height: 600px;
-        background-color:lightskyblue;
+    
     }
     #head{
         color: black;
