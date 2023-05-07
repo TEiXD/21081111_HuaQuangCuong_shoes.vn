@@ -73,14 +73,14 @@ h1{
     width: 150px;
     border-radius: 10px;
     height: 40px;
-    background-color:red;
+    background-color: #dd4d3f;
     border: none;
 }
 #btn2{
     width: 150px;
     border-radius: 10px;
     height: 40px;
-    background-color:blue;
+    background-color:#3c589e;
     border: none;
 }
 #a1{
