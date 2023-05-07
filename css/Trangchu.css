@@ -4,6 +4,7 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 50px 100px 2400px 430px 30px;
+    overflow-x: hidden;
     grid-template-areas: 
     "header"
     "header-link"
